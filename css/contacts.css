@@ -1,0 +1,322 @@
+/* Trenter Landing Page CSS - Pure.css Based */
+/* Градиентная тема: f5eb4c → ebbc65 → e5aed6 → e8a493 */
+
+:root {
+    --grad-start: #f5eb4c;
+    --grad-mid: #ebbc65;
+    --grad-pink: #e5aed6;
+    --grad-peach: #e8a493;
+    --text-dark: #1e1e2a;
+    --text-soft: #2d2d3a;
+    --card-bg: #fffffffa;
+    --border-soft: rgba(235, 188, 101, 0.25);
+    --shadow-sm: 0 8px 20px rgba(232, 164, 147, 0.12);
+    --border-color: #ffe5d9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(145deg, #fffaf2 0%, #fff5f0 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* ===== ГРАДИЕНТНЫЙ ХЕДЕР ===== */
+.form-header {
+    background: linear-gradient(95deg, var(--grad-start), var(--grad-mid), var(--grad-pink), var(--grad-peach));
+    border-radius: 2rem 2rem 2rem 0.5rem;
+    padding: 2.2rem 2rem;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+    box-shadow: 0 12px 28px rgba(235, 188, 101, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+}
+
+.form-header p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+    color: #1e1e2a;
+}
+
+.header-badge {
+    background: rgba(255,255,255,0.3);
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #231f1f;
+}
+
+/* ===== КАРТОЧКА ФОРМЫ ===== */
+.form-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--border-soft);
+    border-radius: 2rem 1rem 2rem 1rem;
+    padding: 2.8rem 2.5rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2.5rem;
+    transition: box-shadow 0.25s;
+}
+
+.form-card:hover {
+    box-shadow: 0 18px 30px rgba(229, 174, 214, 0.2);
+}
+
+/* ===== ТИПЫ ОБРАЩЕНИЙ (РАДИО-ПЛИТКИ) ===== */
+.feedback-type-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+    justify-content: space-between;
+}
+
+.feedback-option {
+    flex: 1 1 180px;
+    background: rgba(245, 235, 76, 0.08);
+    border: 1.5px solid rgba(235, 188, 101, 0.3);
+    border-radius: 40px 12px 40px 12px;
+    transition: all 0.2s ease;
+}
+
+.feedback-option:hover {
+    background: rgba(229, 174, 214, 0.08);
+    border-color: var(--grad-pink);
+    transform: translateY(-2px);
+}
+
+.feedback-option label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0.8rem;
+    font-weight: 550;
+    color: var(--text-soft);
+    cursor: pointer;
+    width: 100%;
+    border-radius: inherit;
+}
+
+.feedback-option input[type="radio"] {
+    accent-color: var(--grad-peach);
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0;
+}
+
+/* ===== ПОЛЯ ВВОДА ===== */
+.pure-form input[type="text"],
+.pure-form input[type="email"],
+.pure-form textarea,
+.pure-form select {
+    border: 1.5px solid var(--border-color);
+    border-radius: 20px 8px 20px 8px;
+    padding: 0.85rem 1.2rem;
+    font-size: 1rem;
+    background: white;
+    transition: all 0.2s;
+    width: 100%;
+    box-shadow: inset 0 2px 5px rgba(232, 164, 147, 0.05);
+}
+
+.pure-form input:focus,
+.pure-form textarea:focus,
+.pure-form select:focus {
+    border-color: transparent;
+    outline: none;
+    background: #fffefc;
+    box-shadow: 0 0 0 3px rgba(235, 188, 101, 0.2), 0 0 0 1px var(--grad-mid);
+    border-radius: 20px 8px 20px 8px;
+}
+
+.pure-form label {
+    font-weight: 550;
+    color: #3a2c2c;
+    margin-bottom: 0.4rem;
+    display: inline-block;
+}
+
+.pure-form legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+    color: #3a2c2c;
+    display: flex;
+    align-items: center;
+}
+
+.legend-dot {
+    background: var(--grad-start);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* ===== ГРАДИЕНТНАЯ КНОПКА ===== */
+.gradient-button {
+    background: linear-gradient(125deg, var(--grad-start), var(--grad-mid), var(--grad-pink));
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #1e1e1e !important;
+    font-weight: 700;
+    padding: 0.9rem 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 48px 16px 48px 16px;
+    transition: all 0.25s;
+    box-shadow: 0 6px 0 rgba(229, 174, 214, 0.3);
+    letter-spacing: 0.03em;
+    width: 100%;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+.gradient-button:hover {
+    background: linear-gradient(125deg, var(--grad-mid), var(--grad-pink), var(--grad-peach));
+    box-shadow: 0 10px 20px rgba(232, 164, 147, 0.4);
+    transform: scale(1.02);
+    border-color: white;
+}
+
+.gradient-button:focus {
+    outline: 2px solid var(--grad-peach);
+    outline-offset: 3px;
+}
+
+/* ===== БЛОК-ПРИМЕЧАНИЕ ===== */
+.note {
+    background: rgba(245, 235, 76, 0.1);
+    padding: 1.2rem 1.5rem;
+    border-radius: 20px 8px 20px 8px;
+    border-left: 8px solid var(--grad-pink);
+    margin-top: 1rem;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+/* ===== ФУТЕР ===== */
+.footer-gradient {
+    margin-top: 3rem;
+    padding: 1.8rem 0;
+    text-align: center;
+    background: linear-gradient(145deg, rgba(245,235,76,0.1), rgba(232,164,147,0.1));
+    border-radius: 40px 12px 40px 12px;
+    color: #3a2e2e;
+    font-weight: 450;
+    border: 1px solid rgba(235,188,101,0.2);
+}
+
+.footer-gradient span {
+    font-weight: 600;
+}
+
+/* ===== ЧЕКБОКС ===== */
+.pure-checkbox {
+    margin: 1.2rem 0 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pure-checkbox input {
+    accent-color: var(--grad-peach);
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+/* ===== УТИЛИТЫ ===== */
+.emoji-bullet {
+    font-size: 1.3rem;
+    margin-right: 0.3rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ===== АДАПТАЦИЯ ===== */
+@media (max-width: 767px) {
+    .container {
+        padding: 1.2rem;
+    }
+    
+    .form-header {
+        padding: 1.5rem;
+    }
+    
+    .form-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .form-card {
+        padding: 1.8rem;
+    }
+    
+    .feedback-type-group {
+        flex-direction: column;
+    }
+    
+    .feedback-option {
+        width: 100%;
+        flex: auto;
+    }
+    
+    .pure-u-md-1-2 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .pure-g > .pure-u-md-1-2:first-child {
+        padding-right: 0.8rem;
+    }
+    
+    .pure-g > .pure-u-md-1-2:last-child {
+        padding-left: 0.8rem;
+    }
+}
+
+/* ===== ССЫЛКИ ===== */
+a {
+    color: #b35e4a;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d48c7a;
+    text-decoration: underline;
+}
