@@ -1,27 +1,213 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>Минималистичный лендинг | Pure.css</title> 
-<!-- Pure CSS --> 
-<link rel="stylesheet" 
-href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"> 
-<link rel="stylesheet" 
-href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trenter — Цифровая тетрадь фитнес-тренера</title>
+    <!-- Pure CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<body> 
-<div class="hero pure-g"> 
-    <div class="pure-u-1 pure-u-md-2-3"> 
-        <h1 class="hero-title">Здоровое питание с доставкой</h1> 
-        <p class="hero-subtitle">Ежедневные рационы от шеф-повара. Без сахара, 
-        глютена и консервантов.</p> 
-        <a href="#order" class="pure-button pure-button-primary">Заказать пробный 
-        день</a> 
-    </div> 
-    <div class="pure-u-1 pure-u-md-1-3"> 
-        <img src="assets/hero-image.svg" alt="Здоровое питание" class="pure-img"> 
-    </div>
-</div>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="pure-g header-wrapper">
+            <div class="pure-u-1 pure-u-md-1-3">
+                <div class="logo">
+                    <span class="logo-text">Trenter</span>
+                </div>
+            </div>
+            <nav class="pure-u-1 pure-u-md-1-3">
+                <ul class="nav-list">
+                    <li><a href="#how-it-works">Как работает</a></li>
+                    <li><a href="#tariffs">Тарифы</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="pure-u-1 pure-u-md-1-3 text-right">
+                <button class="pure-button pure-button-primary">Войти</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Цифровая тетрадь фитнес-тренера</h1>
+            <p class="hero-subtitle">Проще, чем Excel. Удобнее, чем CRM.</p>
+            
+            <!-- Interactive Demo -->
+            <div class="demo-widget">
+                <h3>Попробуйте прямо сейчас</h3>
+                <div class="demo-buttons">
+                    <button class="pure-button">+ Добавить клиента</button>
+                    <button class="pure-button">Провести тренировку</button>
+                    <button class="pure-button">Посмотреть доход</button>
+                </div>
+                <div class="demo-output">
+                    <p>Интерактивное демо загружается...</p>
+                </div>
+            </div>
+
+            <div class="pure-g cta-buttons">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <button class="pure-button pure-button-primary full-width">Попробовать демо</button>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <button class="pure-button button-secondary full-width">Начать бесплатно</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Как это работает</h2>
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="card">
+                        <div class="card-number">1</div>
+                        <h3>Добавьте клиента</h3>
+                        <p>Создайте карточку клиента с контактами и историей тренировок. Всё в одном месте.</p>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="card">
+                        <div class="card-number">2</div>
+                        <h3>Ведите расписание</h3>
+                        <p>Синхронизируйте свой календарь и помните о каждой тренировке. Не забудьте никого.</p>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="card">
+                        <div class="card-number">3</div>
+                        <h3>Контролируйте финансы</h3>
+                        <p>Отслеживайте платежи и доход. Прозрачность в каждой копейке.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="cases" class="cases">
+        <div class="container">
+            <h2 class="section-title">Кейсы тренеров</h2>
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="case-card">
+                        <h3>История внедрения #1</h3>
+                        <p><strong>Александр, персональный тренер</strong></p>
+                        <p>«Раньше вёл учёт в Excel и Google Календаре одновременно. Trenter собрал всё в одном месте. Теперь я вижу всех клиентов и доход за месяц одним взглядом.»</p>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="case-card">
+                        <h3>История внедрения #2</h3>
+                        <p><strong>Мария, инструктор групповых тренировок</strong></p>
+                        <p>«Раньше теряла записи клиентов. Теперь Trenter сам отправляет им напоминания, и я вижу, кто придёт. Количество отмен упало на 40%.»</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tariffs Section -->
+    <section id="tariffs" class="tariffs">
+        <div class="container">
+            <h2 class="section-title">Тарифы</h2>
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="tariff-card">
+                        <h3>Попробовать</h3>
+                        <div class="price">0₽</div>
+                        <ul class="features">
+                            <li>14 дней</li>
+                            <li>5 клиентов</li>
+                            <li>Без карты</li>
+                        </ul>
+                        <button class="pure-button pure-button-primary full-width">Включить бесплатный период</button>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <div class="tariff-card featured">
+                        <h3>Тетрадь</h3>
+                        <div class="price">490₽<span class="period">/мес</span></div>
+                        <ul class="features">
+                            <li>✓ Не ограничено клиентов</li>
+                            <li>✓ История платежей</li>
+                            <li>✓ Синхронизация с календарями</li>
+                            <li>✓ Вход через Telegram</li>
+                            <li>✓ Поддержка 24/7</li>
+                        </ul>
+                        <button class="pure-button pure-button-primary full-width">Начать бесплатно</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <details class="faq-item">
+                <summary>Где хранятся данные?</summary>
+                <p>Все данные хранятся в защищённых облачных серверах с шифрованием TLS. Мы используем инфраструктуру Google Cloud Platform и гарантируем 99.9% доступности.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Что будет при отмене подписки?</summary>
+                <p>Ваши данные останутся доступны в течение 30 дней. Вы сможете их экспортировать или возобновить подписку. Удаление полностью необратимо только после этого периода.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Как перенести расписание из Google Календаря?</summary>
+                <p>Используйте встроенный импортер: Настройки → Синхронизация → Импортировать из Google Календаря. Процесс займёт менее минуты.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Есть ли мобильная версия?</summary>
+                <p>Мобильное приложение находится в разработке. Сейчас доступна полностью адаптивная веб-версия, которая отлично работает на смартфонах и планшетах.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="footer-section">
+                        <h4>Контакты</h4>
+                        <p><a href="mailto:hello@trenter.ru">hello@trenter.ru</a></p>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="footer-section">
+                        <h4>Документы</h4>
+                        <ul>
+                            <li><a href="#">Политика конфиденциальности</a></li>
+                            <li><a href="#">Пользовательское соглашение</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="footer-section">
+                        <h4>Мы в соцсетях</h4>
+                        <ul>
+                            <li><a href="#">Telegram</a></li>
+                            <li><a href="#">VK</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Trenter. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
