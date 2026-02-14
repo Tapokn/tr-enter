@@ -1,14 +1,72 @@
 /* Trenter Landing Page CSS - Pure.css Based */
-
+/* Общие переменные из contacts.css */
 :root {
-    --primary-color: #FF9800;
-    --primary-dark: #E65100;
-    --secondary-color: #f4f4f4;
-    --text-color: #1a1a1a;
-    --text-light: #4a4a4a;
-    --border-color: #ddd;
-    --light-gray: #f9f9f9;
+    --grad-start: #f5eb4c;
+    --grad-mid: #ebbc65;
+    --grad-pink: #e5aed6;
+    --grad-peach: #e8a493;
+    --text-dark: #1e1e2a;
 }
+
+/* Обновленный хэдер в едином стиле */
+.header {
+    background: #fff;
+    /* Тонкая линия с градиентом внизу хэдера */
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, var(--grad-start), var(--grad-mid), var(--grad-pink), var(--grad-peach)) 1;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.header-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Логотип с использованием градиентного текста */
+.logo-text {
+    font-size: 1.9rem;
+    font-weight: 650;
+    background: linear-gradient(45deg, var(--grad-mid), var(--grad-peach));
+    letter-spacing: -1px;
+}
+
+/* Навигация как в main.css */
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: var(--grad-mid);
+}
+
+/* Кнопка в хэдере с градиентом */
+.header-cta {
+    background: linear-gradient(to right, var(--grad-mid), var(--grad-peach)) !important;
+    border-radius: 25px !important;
+    padding: 0.6rem 1.5rem !important;
+    font-weight: 600 !important;
+    border: none !important;
+}
+
 
 * {
     box-sizing: border-box;
@@ -34,15 +92,7 @@ body {
     padding: 0 1rem;
 }
 
-/* Header */
-.header {
-    background-color: #fff;
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+
 
 @media (min-width: 768px) {
     .header {
@@ -50,11 +100,7 @@ body {
     }
 }
 
-.header-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
+
 
 @media (max-width: 767px) {
     .header-wrapper {
@@ -69,9 +115,7 @@ body {
 }
 
 .logo {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-color);
+    border-radius: 50px;
 }
 
 @media (min-width: 768px) {
@@ -80,19 +124,8 @@ body {
     }
 }
 
-.logo-text {
-    margin-left: 0.5rem;
-}
 
-.nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    font-size: 0.9rem;
-}
+
 
 @media (min-width: 768px) {
     .nav-list {
@@ -101,15 +134,9 @@ body {
     }
 }
 
-.nav-list a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
 
-.nav-list a:hover {
-    color: var(--primary-color);
-}
+
+
 
 .text-right {
     text-align: right;
@@ -132,7 +159,6 @@ body {
     font-size: 2rem;
     font-weight: 700;
     margin: 0 0 1rem 0;
-    color: var(--primary-dark);
 }
 
 @media (min-width: 768px) {
@@ -254,27 +280,7 @@ body {
     border-color: #999;
 }
 
-.pure-button-primary {
-    background-color: var(--primary-color) !important;
-    color: #fff !important;
-    border-color: var(--primary-color) !important;
-}
 
-.pure-button-primary:hover {
-    background-color: var(--primary-dark) !important;
-    border-color: var(--primary-dark) !important;
-}
-
-.button-secondary {
-    background-color: var(--secondary-color);
-    border-color: #ccc;
-    color: var(--primary-color);
-}
-
-.button-secondary:hover {
-    background-color: #eee;
-    border-color: #999;
-}
 
 /* Sections */
 section {
