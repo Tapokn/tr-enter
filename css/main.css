@@ -58,12 +58,70 @@
     align-items: center;
 }
 
-/* Логотип с использованием градиентного текста */
+
+
+/* 
+================================================================================
+=  ЛОГОТИП И БУРГЕР-МЕНЮ (LOGO & BURGER)
+================================================================================
+Новый контейнер для логотипа и бургер-иконки:
+- Бургер-иконка слева от текста
+- Две полоски с градиентом и скругленными краями
+- Уменьшенный размер текста логотипа
+*/
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Бургер-иконка */
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+/* Полоски бургер-меню */
+.burger-icon span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: linear-gradient(45deg, var(--grad-mid), var(--grad-peach));
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Эффект при наведении (чуть расширяются) */
+.burger-icon:hover span {
+    width: 28px;
+}
+
+/* Уменьшаем размер текста логотипа */
 .logo-text {
-    font-size: 1.9rem;
+    font-size: 1.5rem; /* Был 1.9rem, уменьшили */
     font-weight: 650;
     background: linear-gradient(45deg, var(--grad-mid), var(--grad-peach));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     letter-spacing: -1px;
+}
+
+/* Фикс для родительского блока PureCSS - принудительно применяем стили */
+.logo {
+    border-radius: 50px;
+    width: 100% !important; /* Переопределяем PureCSS */
+}
+
+/* Для мобилок - центрируем */
+@media (max-width: 767px) {
+    .logo-container {
+        justify-content: center;
+    }
 }
 
 /* Навигация как в main.css */
@@ -150,15 +208,8 @@ body {
     }
 }
 
-.logo {
-    border-radius: 50px;
-}
 
-@media (min-width: 768px) {
-    .logo {
-        font-size: 1.5rem;
-    }
-}
+
 
 /* Адаптивные стили для навигации */
 @media (min-width: 768px) {
