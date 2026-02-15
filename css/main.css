@@ -153,7 +153,7 @@
     font-weight: 600 !important;
     border: none !important;
 }
-/* Утилита для выравнивания текста справа */
+/* Утилита для выравнивания текста справа в хэдере(чтобы кнопка не наезжала) */
 .text-right {
     text-align: right;
 }
@@ -212,6 +212,28 @@
     .text-right {
         text-align: center;
     }
+}
+
+/* Фиксированная шапка на мобильных */
+.header.header--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: #fff; /* ваш цвет фона */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+/* Скрытие шапки */
+.header.header--hidden {
+    transform: translateY(-100%);
+}
+
+/* Отступ для body при фиксированной шапке */
+body {
+    transition: padding-top 0.3s ease;
 }
 /* 
 ================================================================================
