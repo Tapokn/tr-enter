@@ -311,6 +311,7 @@
 .pure-form select {
     min-width: 200px;
     padding-right: 2rem;
+    height: auto !important;
 }
 
 .pure-form input:focus,
