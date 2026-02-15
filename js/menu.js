@@ -36,3 +36,16 @@
             }
         });
     });
+
+// Закрытие по ESC (только закрытие, не открытие)
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const isOpen = offcanvasMenu.classList.contains('open');
+        if (isOpen) {
+            closeMenu();
+        }
+        // Убираем открытие по ESC
+    }
+});
+
+
