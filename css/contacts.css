@@ -1,6 +1,7 @@
-/* Trenter Landing Page CSS - Pure.css Based */
-/* Градиентная тема: f5eb4c → ebbc65 → e5aed6 → e8a493 */
+/* Trenter Contacts Page CSS */
+/* Using main.css classes and Pure framework with BEM methodology */
 
+/* CSS Variables - same as main.css */
 :root {
     --grad-start: #f5eb4c;
     --grad-mid: #ebbc65;
@@ -12,54 +13,80 @@
     --border-soft: rgba(235, 188, 101, 0.25);
     --shadow-sm: 0 8px 20px rgba(232, 164, 147, 0.12);
     --border-color: #ffe5d9;
+    --text-color: #333;
+    --text-light: #484444;
+    --border-color-base: #f0e4e8;
+    --light-gray: #f5f5f5;
+    --primary-dark: #2c3e50;
 }
 
-* {
-    box-sizing: border-box;
+/* 
+================================================================================
+=  CONTACTS PAGE STYLES (BEM)
+================================================================================
+*/
+
+/* Contacts Section */
+.contacts {
+    padding: 3rem 0;
+    min-height: calc(100vh - 200px);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-html {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--text-dark);
+@media (min-width: 768px) {
+    .contacts {
+        padding: 4rem 0;
+    }
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(145deg, #fffaf2 0%, #fff5f0 100%);
-    color: var(--text-dark);
-    min-height: 100vh;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-}
-
-/* ===== ГРАДИЕНТНЫЙ ХЕДЕР ===== */
-.form-header {
+/* Header Block - gradient background, centered */
+.contacts__header {
     background: linear-gradient(95deg, var(--grad-start), var(--grad-mid), var(--grad-pink), var(--grad-peach));
-    border-radius: 2rem 2rem 2rem 0.5rem;
+    border-radius: 0;
     padding: 2.2rem 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 0;
     color: #1a1a1a;
     box-shadow: 0 12px 28px rgba(235, 188, 101, 0.2);
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
-.form-header h1 {
+@media (max-width: 767px) {
+    .contacts__header {
+        padding: 1.5rem 1rem;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+}
+
+.contacts__title {
     margin: 0 0 0.5rem 0;
     font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: -0.01em;
     text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
-.form-header p {
+@media (max-width: 767px) {
+    .contacts__title {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
+
+.contacts__emoji {
+    font-size: 1.3rem;
+}
+
+.contacts__subtitle {
     margin: 0;
     font-size: 1.2rem;
     font-weight: 400;
@@ -67,35 +94,93 @@ body {
     color: #1e1e2a;
 }
 
-.header-badge {
-    background: rgba(255,255,255,0.3);
-    padding: 0.3rem 1rem;
-    border-radius: 40px;
-    display: inline-block;
+@media (max-width: 767px) {
+    .contacts__subtitle {
+        font-size: 1rem;
+    }
+}
+
+.contacts__hint {
     margin-top: 1rem;
     font-size: 1.1rem;
     font-weight: 500;
     color: #231f1f;
+    background: rgba(255,255,255,0.3);
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    display: inline-block;
 }
 
-/* ===== КАРТОЧКА ФОРМЫ ===== */
+@media (max-width: 767px) {
+    .contacts__hint {
+        font-size: 0.95rem;
+        padding: 0.25rem 0.75rem;
+    }
+}
+
+/* Form Card Block - white background, below gradient */
 .form-card {
     background: var(--card-bg);
     backdrop-filter: blur(4px);
     border: 1px solid var(--border-soft);
-    border-radius: 2rem 1rem 2rem 1rem;
+    border-radius: 0 0 2rem 2rem;
     padding: 2.8rem 2.5rem;
     box-shadow: var(--shadow-sm);
     margin-bottom: 2.5rem;
     transition: box-shadow 0.25s;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+    .form-card {
+        padding: 1.5rem;
+        border-radius: 0;
+        margin-bottom: 1.5rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 .form-card:hover {
     box-shadow: 0 18px 30px rgba(229, 174, 214, 0.2);
 }
 
-/* ===== ТИПЫ ОБРАЩЕНИЙ (РАДИО-ПЛИТКИ) ===== */
-.feedback-type-group {
+.form-card__fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form-card__legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+    color: #3a2c2c;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .form-card__legend {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.form-card__legend-dot {
+    background: var(--grad-start);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* Feedback Types Block */
+.form-card__types {
     display: flex;
     flex-wrap: wrap;
     gap: 1.2rem;
@@ -103,7 +188,15 @@ body {
     justify-content: space-between;
 }
 
-.feedback-option {
+@media (max-width: 767px) {
+    .form-card__types {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.form-card__type {
     flex: 1 1 180px;
     background: rgba(245, 235, 76, 0.08);
     border: 1.5px solid rgba(235, 188, 101, 0.3);
@@ -111,13 +204,20 @@ body {
     transition: all 0.2s ease;
 }
 
-.feedback-option:hover {
+@media (max-width: 767px) {
+    .form-card__type {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+.form-card__type:hover {
     background: rgba(229, 174, 214, 0.08);
     border-color: var(--grad-pink);
     transform: translateY(-2px);
 }
 
-.feedback-option label {
+.form-card__label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,16 +228,68 @@ body {
     cursor: pointer;
     width: 100%;
     border-radius: inherit;
+    box-sizing: border-box;
 }
 
-.feedback-option input[type="radio"] {
+@media (max-width: 767px) {
+    .form-card__label {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+.form-card__label input[type="radio"] {
     accent-color: var(--grad-peach);
     width: 1.2rem;
     height: 1.2rem;
     margin: 0;
+    flex-shrink: 0;
 }
 
-/* ===== ПОЛЯ ВВОДА ===== */
+.form-card__type-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.form-card__type-text {
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .form-card__type-text {
+        font-size: 0.9rem;
+        white-space: normal;
+    }
+}
+
+/* Form Fields */
+.form-card__row {
+    margin-top: 1.5rem;
+    row-gap: 1.2rem;
+}
+
+@media (max-width: 767px) {
+    .form-card__row {
+        margin-top: 1rem;
+    }
+}
+
+.form-card__field {
+    margin-bottom: 0;
+}
+
+.form-card__field--full {
+    margin-top: 1.2rem;
+}
+
+.form-card__label-text {
+    font-weight: 550;
+    color: #3a2c2c;
+    margin-bottom: 0.4rem;
+    display: inline-block;
+}
+
+/* Поля ввода */
 .pure-form input[type="text"],
 .pure-form input[type="email"],
 .pure-form textarea,
@@ -150,6 +302,15 @@ body {
     transition: all 0.2s;
     width: 100%;
     box-shadow: inset 0 2px 5px rgba(232, 164, 147, 0.05);
+    font-family: inherit;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Поле выбора срочности - шире для иконок */
+.pure-form select {
+    min-width: 200px;
+    padding-right: 2rem;
 }
 
 .pure-form input:focus,
@@ -162,33 +323,23 @@ body {
     border-radius: 20px 8px 20px 8px;
 }
 
-.pure-form label {
-    font-weight: 550;
-    color: #3a2c2c;
-    margin-bottom: 0.4rem;
-    display: inline-block;
-}
-
-.pure-form legend {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1.4rem;
-    color: #3a2c2c;
+/* Checkbox */
+.form-card__checkbox {
+    margin: 1.2rem 0 0.8rem;
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 
-.legend-dot {
-    background: var(--grad-start);
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    margin-right: 10px;
+.form-card__checkbox input {
+    accent-color: var(--grad-peach);
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0;
 }
 
-/* ===== ГРАДИЕНТНАЯ КНОПКА ===== */
-.gradient-button {
+/* Submit Button */
+.form-card__button {
     background: linear-gradient(125deg, var(--grad-start), var(--grad-mid), var(--grad-pink));
     border: 1px solid rgba(255,255,255,0.4);
     color: #1e1e1e !important;
@@ -200,24 +351,34 @@ body {
     box-shadow: 0 6px 0 rgba(229, 174, 214, 0.3);
     letter-spacing: 0.03em;
     width: 100%;
+    max-width: 100%;
     margin-top: 0.5rem;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
-.gradient-button:hover {
+@media (max-width: 767px) {
+    .form-card__button {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        border-radius: 24px 8px 24px 8px;
+    }
+}
+
+.form-card__button:hover {
     background: linear-gradient(125deg, var(--grad-mid), var(--grad-pink), var(--grad-peach));
     box-shadow: 0 10px 20px rgba(232, 164, 147, 0.4);
     transform: scale(1.02);
     border-color: white;
 }
 
-.gradient-button:focus {
+.form-card__button:focus {
     outline: 2px solid var(--grad-peach);
     outline-offset: 3px;
 }
 
-/* ===== БЛОК-ПРИМЕЧАНИЕ ===== */
-.note {
+/* Note Block */
+.form-card__note {
     background: rgba(245, 235, 76, 0.1);
     padding: 1.2rem 1.5rem;
     border-radius: 20px 8px 20px 8px;
@@ -225,39 +386,86 @@ body {
     margin-top: 1rem;
     color: #2c3e50;
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-/* ===== ФУТЕР ===== */
-.footer-gradient {
+@media (max-width: 767px) {
+    .form-card__note {
+        padding: 1rem;
+        font-size: 0.85rem;
+        border-left-width: 4px;
+    }
+}
+
+/* Footer Contacts Block - centered */
+.contacts__footer {
     margin-top: 3rem;
-    padding: 1.8rem 0;
+    padding: 1.8rem;
     text-align: center;
     background: linear-gradient(145deg, rgba(245,235,76,0.1), rgba(232,164,147,0.1));
     border-radius: 40px 12px 40px 12px;
     color: #3a2e2e;
     font-weight: 450;
     border: 1px solid rgba(235,188,101,0.2);
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
-.footer-gradient span {
+@media (max-width: 767px) {
+    .contacts__footer {
+        margin-top: 2rem;
+        padding: 1.2rem;
+        border-radius: 20px 6px 20px 6px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.contacts__footer-brand {
     font-weight: 600;
+    font-size: 1.1rem;
 }
 
-/* ===== ЧЕКБОКС ===== */
-.pure-checkbox {
-    margin: 1.2rem 0 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.contacts__footer-contact {
+    display: block;
+    margin-top: 0.5rem;
+    opacity: 0.9;
 }
 
-.pure-checkbox input {
-    accent-color: var(--grad-peach);
-    width: 1.1rem;
-    height: 1.1rem;
+@media (max-width: 767px) {
+    .contacts__footer-contact {
+        font-size: 0.85rem;
+        word-wrap: break-word;
+    }
 }
 
-/* ===== УТИЛИТЫ ===== */
+.contacts__footer-text {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+    .contacts__footer-text {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Links */
+a {
+    color: #b35e4a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d48c7a;
+    text-decoration: underline;
+}
+
+/* Utility Classes */
 .emoji-bullet {
     font-size: 1.3rem;
     margin-right: 0.3rem;
@@ -265,58 +473,4 @@ body {
 
 .text-center {
     text-align: center;
-}
-
-/* ===== АДАПТАЦИЯ ===== */
-@media (max-width: 767px) {
-    .container {
-        padding: 1.2rem;
-    }
-    
-    .form-header {
-        padding: 1.5rem;
-    }
-    
-    .form-header h1 {
-        font-size: 1.8rem;
-    }
-    
-    .form-card {
-        padding: 1.8rem;
-    }
-    
-    .feedback-type-group {
-        flex-direction: column;
-    }
-    
-    .feedback-option {
-        width: 100%;
-        flex: auto;
-    }
-    
-    .pure-u-md-1-2 {
-        width: 100% !important;
-        padding: 0 !important;
-    }
-}
-
-@media (min-width: 768px) {
-    .pure-g > .pure-u-md-1-2:first-child {
-        padding-right: 0.8rem;
-    }
-    
-    .pure-g > .pure-u-md-1-2:last-child {
-        padding-left: 0.8rem;
-    }
-}
-
-/* ===== ССЫЛКИ ===== */
-a {
-    color: #b35e4a;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #d48c7a;
-    text-decoration: underline;
 }
