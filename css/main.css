@@ -153,6 +153,11 @@
     font-weight: 600 !important;
     border: none !important;
 }
+/* Утилита для выравнивания текста справа */
+.text-right {
+    text-align: right;
+}
+
 /* 
 ================================================================================
 =  МОБИЛЬНАЯ АДАПТАЦИЯ ХЕДЕРА (MOBILE HEADER)
@@ -191,11 +196,6 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-    }
-
-    /* Убираем центрирование бургера, которое было ранее */
-    .logo-container {
-        justify-content: center;
     }
 
     /* Остальные мобильные стили */
@@ -239,30 +239,6 @@
     opacity: 0.3;
 }
 
-.offcanvas-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.offcanvas-nav li {
-    margin-bottom: 1rem;
-}
-
-.offcanvas-nav a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: block;
-    padding: 0.3rem 0;
-}
-
-.offcanvas-nav a:hover {
-    color: var(--grad-mid);
-    padding-left: 10px;
-}
 
 /* Стили для мобильной CTA кнопки в меню */
 .mobile-cta {
@@ -283,40 +259,6 @@
     color: var(--text-dark) !important;
 }
 
-/* Скрываем навигацию и кнопку в хедере на мобильных */
-@media (max-width: 767px) {
-    .header .nav-list,
-    .header .header-cta {
-        display: none;
-    }
-
-    /* Перестраиваем хедер для мобильных */
-    .header-wrapper {
-        display: flex;
-        flex-direction: row !important;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0;
-    }
-
-    .header .pure-u-1.pure-u-md-1-3 {
-        width: 100% !important;
-        margin-bottom: 0;
-    }
-
-    .logo-container {
-        justify-content: center;
-        position: relative;
-    }
-
-    /* Бургер-иконка теперь справа */
-    .burger-icon {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-}
 
 /* 
 ================================================================================
@@ -448,106 +390,6 @@
     color: var(--grad-mid);
     padding-left: 10px;
 }
-/* 
-================================================================================
-=  ОФФКАНВАС МЕНЮ (OFFCANVAS MENU)
-================================================================================
-Стили для выезжающего слева меню:
-- Фиксированное положение слева
-- Плавная анимация выезда/заезда
-- Затемнение фона при открытии
-*/
-.offcanvas-menu {
-    position: fixed;
-    top: 0;
-    left: -300px; /* Скрыто за левой границей */
-    width: 280px;
-    height: 100%;
-    background: #fff;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-    transition: left 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.offcanvas-menu.open {
-    left: 0; /* Показать меню */
-}
-
-.offcanvas-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    border-bottom: 2px solid;
-    border-image: linear-gradient(to right, var(--grad-start), var(--grad-mid), var(--grad-pink), var(--grad-peach)) 1;
-}
-
-.offcanvas-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    background: linear-gradient(45deg, var(--grad-mid), var(--grad-peach));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.offcanvas-close {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    cursor: pointer;
-}
-
-.offcanvas-close span {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 24px;
-    height: 3px;
-    background: linear-gradient(45deg, var(--grad-mid), var(--grad-peach));
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.offcanvas-close span:first-child {
-    transform: rotate(45deg);
-}
-
-.offcanvas-close span:last-child {
-    transform: rotate(-45deg);
-}
-
-.offcanvas-nav {
-    padding: 2rem 1.5rem;
-}
-
-.offcanvas-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.offcanvas-nav li {
-    margin-bottom: 1.5rem;
-}
-
-.offcanvas-nav a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    display: block;
-    padding: 0.5rem 0;
-}
-
-.offcanvas-nav a:hover {
-    color: var(--grad-mid);
-    padding-left: 10px;
-}
-
 /* Затемнение фона при открытом меню */
 .offcanvas-overlay {
     position: fixed;
@@ -614,34 +456,6 @@ body {
     }
 }
 
-/* Адаптивные стили для хэдера на мобильных устройствах */
-@media (max-width: 767px) {
-    .header-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .header-wrapper > div {
-        width: 100%;
-    }
-}
-
-
-
-
-/* Адаптивные стили для навигации */
-@media (min-width: 768px) {
-    .nav-list {
-        gap: 2rem;
-        font-size: 1rem;
-    }
-}
-
-/* Утилита для выравнивания текста справа */
-.text-right {
-    text-align: right;
-}
 
 /* 
 ================================================================================
@@ -1131,31 +945,6 @@ section {
 - Планшеты и ПК (от 768px)
 - Исправления сетки Pure.css
 */
-@media (max-width: 767px) {
-    .pure-g > [class*="pure-u"] {
-        width: 100% !important;
-        margin-bottom: 1rem;
-    }
-
-    .header-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .header-wrapper .pure-u-md-1-3 {
-        width: 100%;
-    }
-
-    .nav-list {
-        gap: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .text-right {
-        text-align: center;
-    }
-}
 
 @media (min-width: 768px) {
     .tariffs .pure-g > .pure-u-md-1-2:first-child {
