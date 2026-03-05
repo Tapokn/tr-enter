@@ -475,3 +475,17 @@ a:hover {
 .text-center {
     text-align: center;
 }
+
+/* ===== Стили для ошибок валидации (добавлено для практической работы 10) ===== */
+.input-error {
+    border-color: #ff3860 !important;
+    background-color: #fff5f7 !important;
+}
+
+.form-card__error-message {
+    color: #ff3860;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
